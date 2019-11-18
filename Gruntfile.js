@@ -41,7 +41,7 @@ module.exports = function(grunt)
                             '*.html',
                             'js/lib/**',
                             'index.php',
-                            'share.jpg'
+                            'share.png'
                         ],
                         dest: 'dist/app'
                     }

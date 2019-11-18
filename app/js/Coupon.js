@@ -32,7 +32,10 @@
                     'event_label': "Q42019_download"
                 });
 
-                window.open(Main.settings.apiPath + "download.php", "_blank");
+                var url = Main.settings.apiPath + "download.php";
+                if(Main.viewport.index == 1) url+="?size=1";
+
+                window.open(url, "_blank");
             });
 
             $container.find(".btn-product").on("click", function(event)

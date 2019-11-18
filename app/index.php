@@ -1,7 +1,7 @@
 <?php
 
 $site_url = 'https://www.healthtime.com.tw/MetaminQ4/';
-$share_image_url = 'https://www.healthtime.com.tw/MetaminQ4/share.jpg';
+$share_image_url = 'https://www.healthtime.com.tw/MetaminQ4/share.png';
 
 
 
@@ -9,7 +9,7 @@ $test_hosts = array("local.savorks.com");
 if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
 {
     $site_url = 'http://local.savorks.com/projects/insight/FD2019_Q4/app/';
-    $share_image_url = 'http://local.savorks.com/projects/insight/FD2019_Q4/app/share.jpg';
+    $share_image_url = 'http://local.savorks.com/projects/insight/FD2019_Q4/app/share.png';
 }
 ?>
 

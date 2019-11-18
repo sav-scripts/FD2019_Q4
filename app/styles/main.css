@@ -1368,9 +1368,11 @@ body {
   top: 75px;
   background-image: url("../images/questionnaire-form-check-circle.png");
   background-size: auto;
-  width: 25px;
+  width: 60px;
   height: 25px;
   background-position-y: top;
+  background-position-x: left;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 #questionnaire .content .form-block .fields .check-female.checked-mode,
@@ -2863,7 +2865,7 @@ body {
     top: 110px;
     background-image: url("../images/questionnaire-form-check-circle.m.png");
     background-size: auto;
-    width: 60px;
+    width: 120px;
     height: 60px;
     background-position-y: top;
     cursor: pointer;
