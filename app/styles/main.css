@@ -1,0 +1,3120 @@
+/** common mixins **/
+@keyframes draw-border {
+  0% {
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-width: 6px;
+  }
+}
+.clear {
+  clear: both;
+}
+.pc-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: #370246;
+}
+#invisible-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+#main-page {
+  position: relative;
+  width: 100%;
+  min-width: 1366px;
+  height: auto;
+  min-height: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  z-index: 1;
+}
+#main-page.loading-mode {
+  height: 100vh;
+}
+#main-page.scroll-lock-mode {
+  position: fixed;
+  top: 0;
+  height: 100%;
+}
+#main-page.scroll-lock-mode .scroll-lock-wrapper {
+  position: absolute;
+  width: 100%;
+}
+/* popup container */
+#popup-container {
+  position: relative;
+  height: auto;
+  top: auto;
+  left: auto;
+  margin: 0 auto;
+  min-height: 100%;
+  min-width: 1366px;
+  width: 100%;
+  z-index: 200;
+  overflow: hidden;
+}
+#popup-container .popup-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#popup-container.under-nav-mode {
+  z-index: 99;
+}
+#popup-layout {
+  position: fixed;
+  width: 1920px;
+  height: auto;
+  left: 50%;
+  top: 0;
+  margin-left: -960px;
+  background-color: white;
+  opacity: 0.8;
+}
+#popup-layout .wrapper .popup-questionnaire-step3 {
+  position: relative;
+  width: 1920px;
+  height: 1200px;
+  background-image: url("../images/layout/popup-questionnare-step3.jpg");
+  background-size: auto;
+}
+#popup-layout .wrapper .coupon {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background-image: url("../images/layout/coupon.jpg");
+  background-size: auto;
+}
+/* main loading */
+#main-loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #370246;
+  background: linear-gradient(0deg, #370246 2%, #9d46b7 88%);
+  z-index: 1001;
+}
+#main-loading .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 174px;
+  height: 175px;
+  margin-left: -87px;
+  margin-top: -87.5px;
+  background-image: url("../images/loading-content.png");
+  background-size: auto;
+}
+#main-loading #main-loading-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 26px;
+  color: #ffe16f;
+  width: 400px;
+  height: 36px;
+  margin-left: -200px;
+  margin-top: 19px;
+  text-align: center;
+}
+/* loading */
+#loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+#loading #loading-text {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 16px;
+  color: #8c8c8c;
+  letter-spacing: 1px;
+  padding: 1px 20px;
+  background-color: white;
+  border-radius: 10px;
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  box-shadow: 0 0 10px white;
+}
+#layout {
+  position: absolute;
+  width: 1920px;
+  height: auto;
+  left: 50%;
+  top: 0;
+  margin-left: -960px;
+  opacity: 0.7;
+  display: none;
+}
+#layout .all {
+  position: relative;
+  width: 1920px;
+  height: 3669px;
+  background-image: url("../images/layout/all.jpg");
+  background-size: auto;
+}
+#layout .questionnaire-step-2 {
+  position: relative;
+  width: 1920px;
+  height: 3669px;
+  background-image: url("../images/layout/questionnaire-step-2.jpg");
+  background-size: auto;
+}
+/* nav */
+#nav {
+  position: fixed;
+  top: 0;
+  width: 1366px;
+  z-index: 100;
+  left: 50%;
+  margin-left: -683px;
+}
+@media (max-device-width: 1366px) {
+  #nav {
+    left: 0;
+    margin-left: 0;
+  }
+}
+#nav .btn-trigger {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 50%;
+  margin-left: 610px;
+  cursor: pointer;
+}
+#nav .btn-trigger:active {
+  margin-top: 1px;
+}
+#nav .btn-trigger .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-trigger-icon.png");
+  background-size: auto;
+}
+#nav .nav-logo {
+  position: absolute;
+  width: 154px;
+  height: 41px;
+  top: 22px;
+  left: 50%;
+  margin-left: -657px;
+  cursor: pointer;
+}
+#nav .nav-logo .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-logo.png");
+  background-size: auto;
+}
+#nav-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+}
+#nav-container .nav-btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+#nav-container .wrapper {
+  position: absolute;
+  overflow: hidden;
+  width: 300px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -300px;
+  text-align: center;
+}
+#nav-container .wrapper .btn-1 {
+  margin-top: 123px;
+}
+#nav-container .wrapper .line {
+  position: relative;
+  width: 238px;
+  height: 1px;
+  margin: 0 auto 0;
+  background-color: #8b789b;
+  display: inline-block;
+}
+#nav-container .wrapper .btn {
+  position: relative;
+  width: 240px;
+  height: 70px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  background-image: url("../images/nav-btn-image.png");
+  background-size: auto;
+}
+#nav-container .wrapper .btn:hover {
+  cursor: pointer;
+}
+#nav-container .wrapper .btn-5 {
+  background-position-y: -280px;
+}
+#nav-container .wrapper .btn-5:active {
+  background-position-y: -279px;
+}
+#nav-container .wrapper .btn-4 {
+  background-position-y: -210px;
+}
+#nav-container .wrapper .btn-4:active {
+  background-position-y: -209px;
+}
+#nav-container .wrapper .btn-3 {
+  background-position-y: -140px;
+}
+#nav-container .wrapper .btn-3:active {
+  background-position-y: -139px;
+}
+#nav-container .wrapper .btn-2 {
+  background-position-y: -70px;
+}
+#nav-container .wrapper .btn-2:active {
+  background-position-y: -69px;
+}
+#nav-container .wrapper .btn-1 {
+  background-position-y: 0px;
+}
+#nav-container .wrapper .btn-1:active {
+  background-position-y: 1px;
+}
+/* index */
+#index {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  height: 100vh;
+  max-height: 1350px;
+  background: #370246;
+  background: linear-gradient(0deg, #370246 28%, #9d46b7 78%);
+}
+#index .light-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 571px;
+  height: 654px;
+  background-image: url("../images/index-light-1.png");
+  background-size: auto;
+  left: 50%;
+  margin-left: -510px;
+}
+#index .contents {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#index .contents .guide {
+  position: absolute;
+  left: -700px;
+  top: -430px;
+  width: 1400px;
+  height: 860px;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+#index .contents .deco-1 {
+  position: absolute;
+  left: -8px;
+  top: -297px;
+  width: 532px;
+  height: 266px;
+  background-image: url("../images/index-deco-1.png");
+  background-size: auto;
+}
+#index .contents .deco-2 {
+  position: absolute;
+  left: -597px;
+  top: -351px;
+  width: 618px;
+  height: 607px;
+  background-image: url("../images/index-deco-2.png");
+  background-size: auto;
+}
+#index .contents .deco-3 {
+  position: absolute;
+  left: -850px;
+  top: 50px;
+  width: 1042px;
+  height: 354px;
+  background-image: url("../images/index-deco-3.png");
+  background-size: auto;
+}
+#index .contents .deco-4 {
+  position: absolute;
+  left: -15px;
+  top: 1px;
+  width: 551px;
+  height: 33px;
+  background-image: url("../images/index-deco-4.png");
+  background-size: auto;
+}
+#index .contents .deco-5 {
+  position: absolute;
+  left: -2px;
+  top: -359px;
+  width: 585px;
+  height: 65px;
+  background-image: url("../images/index-deco-5.png");
+  background-size: auto;
+}
+#index .contents .index-title {
+  width: 531px;
+  height: 266px;
+}
+#index .contents .index-title div {
+  position: absolute;
+  background-image: url(../images/index-deco-1.png);
+}
+#index .contents .index-title > row:nth-child(1) > div:nth-child(1) {
+  left: 73px;
+  top: 0;
+  width: 64px;
+  height: 106px;
+  background-position: -73px 0;
+}
+#index .contents .index-title > row:nth-child(1) > div:nth-child(2) {
+  left: 158px;
+  top: 0;
+  width: 98px;
+  height: 106px;
+  background-position: -158px 0;
+}
+#index .contents .index-title > row:nth-child(1) > div:nth-child(3) {
+  left: 267px;
+  top: 0;
+  width: 99px;
+  height: 106px;
+  background-position: -267px 0;
+}
+#index .contents .index-title > row:nth-child(1) > div:nth-child(4) {
+  left: 377px;
+  top: 0;
+  width: 109px;
+  height: 106px;
+  background-position: -377px 0;
+}
+#index .contents .index-title > row:nth-child(2) > div:nth-child(1) {
+  left: 1px;
+  top: 116px;
+  width: 87px;
+  height: 150px;
+  background-position: -1px -116px;
+}
+#index .contents .index-title > row:nth-child(2) > div:nth-child(2) {
+  left: 98px;
+  top: 116px;
+  width: 137px;
+  height: 150px;
+  background-position: -98px -116px;
+}
+#index .contents .index-title > row:nth-child(2) > div:nth-child(3) {
+  left: 243px;
+  top: 116px;
+  width: 139px;
+  height: 150px;
+  background-position: -243px -116px;
+}
+#index .contents .index-title > row:nth-child(2) > div:nth-child(4) {
+  left: 391px;
+  top: 116px;
+  width: 140px;
+  height: 150px;
+  background-position: -391px -116px;
+}
+#index .contents .deco-6 {
+  position: absolute;
+  left: -586px;
+  top: 285px;
+  width: 1174px;
+  height: 149px;
+  background-image: url("../images/index-deco-6.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#index .contents .deco-6 .deco-6-2 {
+  position: absolute;
+  left: 1085px;
+  top: 55px;
+  width: 40px;
+  height: 39px;
+  background-image: url("../images/index-deco-6-2.png");
+  background-size: auto;
+}
+#index .contents .deco-6 .deco-6-3 {
+  position: absolute;
+  left: 699px;
+  top: -28px;
+  width: 103px;
+  height: 103px;
+  background-image: url("../images/index-deco-6-3.png");
+  background-size: auto;
+}
+#index .contents .deco-6:active {
+  margin-top: 1px;
+}
+@keyframes finger {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  100% {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+}
+#index .contents .deco-6:hover .deco-6-2 {
+  animation: 0.5s finger ease-out alternate infinite;
+}
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.2);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+#index .contents .deco-6:hover .deco-6-3 {
+  transform-origin: left bottom;
+  animation: 2s bubble ease-out normal infinite;
+}
+#index .contents .deco-7 {
+  position: absolute;
+  left: -567px;
+  top: 462px;
+  width: 1126px;
+  height: 93px;
+  background-image: url("../images/index-deco-7.png");
+  background-size: auto;
+}
+#index .contents .light-2 {
+  position: absolute;
+  left: 427px;
+  top: -122px;
+  width: 179px;
+  height: 132px;
+  background-image: url("../images/index-light-2.png");
+  background-size: auto;
+}
+#index .contents .users {
+  position: absolute;
+  left: -11px;
+  top: 79px;
+  width: 555px;
+  height: 137px;
+}
+#index .contents .users .border {
+  fill: transparent;
+  stroke-dashoffset: 0;
+  stroke-width: 2px;
+  stroke: url('#index-border-color');
+}
+#index .contents .users .user-photo.pc-only {
+  position: absolute;
+  left: -72px;
+  top: -64px;
+}
+#index .contents .users .user-photo.pc-only .user-photo-image {
+  position: absolute;
+  clip-path: url(#user-photo-clip);
+}
+#index .contents .users .arrow-down-container {
+  position: absolute;
+  left: 357px;
+  top: 4px;
+  width: 226px;
+  height: 196px;
+}
+#index .contents .users .arrow-down-container .arrow-down {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/index-user-arrow-down.png");
+  background-size: auto;
+}
+#index .contents .users .user-texts {
+  position: absolute;
+  left: 207px;
+  top: -6px;
+}
+#index .contents .users .user-texts .user-text {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 260px;
+  height: 150px;
+  background-image: url("../images/index-user-text.png");
+  background-size: auto;
+}
+#index .contents .users .user-texts .text-1 {
+  background-position-y: 0px;
+}
+#index .contents .users .user-texts .text-2 {
+  background-position-y: -150px;
+}
+#index .contents .users .user-texts .text-3 {
+  background-position-y: -300px;
+}
+#index .contents .users .user-texts .text-4 {
+  background-position-y: -450px;
+}
+#index .contents .users .user-texts .text-5 {
+  background-position-y: -600px;
+}
+#index .right-content {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+#index .right-content .btn-coupon-1 {
+  position: absolute;
+  left: -60px;
+  top: -285px;
+  width: 60px;
+  height: 217px;
+  background-image: url("../images/index-btn-coupon-1.png");
+  background-size: auto;
+}
+#index .right-content .btn-coupon-2 {
+  position: absolute;
+  left: -60px;
+  top: -58px;
+  width: 60px;
+  height: 237px;
+  background-image: url("../images/index-btn-coupon-2.png");
+  background-size: auto;
+}
+#index .right-content .btn-coupon-1,
+#index .right-content .btn-coupon-2 {
+  cursor: pointer;
+}
+#index .right-content .btn-coupon-1:active,
+#index .right-content .btn-coupon-2:active {
+  margin-top: 1px;
+}
+/* detail */
+#detail {
+  position: relative;
+  width: 100%;
+  min-height: 882px;
+  height: 100vh;
+  max-height: 1350px;
+  background: #370246;
+}
+#detail .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#detail .background .deco-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+#detail .background .deco-left .deco-1 {
+  position: absolute;
+  left: 4px;
+  top: -149px;
+  width: 769px;
+  height: 763px;
+  background-image: url("../images/detail-bg-deco-1.png");
+  background-size: auto;
+}
+#detail .background .deco-left .deco-2 {
+  position: absolute;
+  left: -535px;
+  top: -380px;
+  width: 1622px;
+  height: 1122px;
+  background-image: url("../images/detail-bg-deco-2.png");
+  background-size: auto;
+}
+#detail .background .deco-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+#detail .background .deco-right .deco-1 {
+  position: absolute;
+  left: -188px;
+  top: -316px;
+  width: 769px;
+  height: 763px;
+  background-image: url("../images/detail-bg-deco-1.png");
+  background-size: auto;
+}
+#detail .background .deco-right .deco-2 {
+  position: absolute;
+  left: -715px;
+  top: -590px;
+  width: 1622px;
+  height: 1122px;
+  background-image: url("../images/detail-bg-deco-2.png");
+  background-size: auto;
+}
+#detail .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#detail .content .deco-1 {
+  position: absolute;
+  left: -174px;
+  top: -349px;
+  width: 306px;
+  height: 52px;
+  background-image: url("../images/detail-deco-1.png");
+  background-size: auto;
+}
+#detail .content .deco-2 {
+  position: absolute;
+  left: -173px;
+  top: -282px;
+  width: 617px;
+  height: 63px;
+  background-image: url("../images/detail-deco-2.png");
+  background-size: auto;
+}
+#detail .content .deco-3 {
+  position: absolute;
+  left: -174px;
+  top: -193px;
+  width: 688px;
+  height: 89px;
+  background-image: url("../images/detail-deco-3.png");
+  background-size: auto;
+}
+#detail .content .deco-4 {
+  position: absolute;
+  left: -596px;
+  top: -45px;
+  width: 327px;
+  height: 327px;
+  background-image: url("../images/detail-deco-4.png");
+  background-size: auto;
+}
+#detail .content .deco-6 {
+  position: absolute;
+  left: -247px;
+  top: 364px;
+  width: 282px;
+  height: 39px;
+  background-image: url("../images/detail-deco-6.png");
+  background-size: auto;
+}
+#detail .content .detail-title {
+  width: 617px;
+  height: 63px;
+}
+#detail .content .detail-title div {
+  position: absolute;
+  background-image: url(../images/detail-deco-2.png);
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(1) {
+  left: 1px;
+  top: 0;
+  width: 53px;
+  height: 63px;
+  background-position: -1px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(2) {
+  left: 58px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -58px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(3) {
+  left: 118px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -118px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(4) {
+  left: 178px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -178px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(5) {
+  left: 238px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -238px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(6) {
+  left: 316px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -316px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(7) {
+  left: 376px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -376px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(8) {
+  left: 436px;
+  top: 0;
+  width: 57px;
+  height: 63px;
+  background-position: -436px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(9) {
+  left: 496px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -496px 0;
+}
+#detail .content .detail-title > row:nth-child(1) > div:nth-child(10) {
+  left: 556px;
+  top: 0;
+  width: 56px;
+  height: 63px;
+  background-position: -556px 0;
+}
+#detail .content .deco-5 {
+  position: absolute;
+  left: -685px;
+  top: -325px;
+  width: 519px;
+  height: 1359px;
+  background-image: url("../images/detail-deco-5.png");
+  background-size: auto;
+  background-position-y: top;
+}
+#detail .content .bg-light {
+  position: absolute;
+  left: -869px;
+  top: -610px;
+  width: 1738px;
+  height: 1062px;
+  background-image: url("../images/detail-bg-light.png");
+  background-size: auto;
+}
+#detail .content .deco-7 {
+  position: absolute;
+  left: -197px;
+  top: -81px;
+  width: 772px;
+  height: 466px;
+  background-image: url("../images/detail-deco-7.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#detail .content .deco-7 .deco-7-2 {
+  position: absolute;
+  left: 322px;
+  top: 170px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/detail-deco-7-2.png");
+  background-size: auto;
+}
+#detail .content .deco-7 .deco-7-3 {
+  position: absolute;
+  left: 90px;
+  top: 60px;
+  width: 565px;
+  height: 359px;
+  background-image: url("../images/detail-deco-7-3.png");
+  background-size: auto;
+}
+#detail .content .deco-7:active .deco-7-2 {
+  margin-top: 1px;
+}
+/* questionnaire */
+#questionnaire {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 1517px;
+  background: #601b7c;
+  background: linear-gradient(0deg, #601b7c 40%, #9136a8 64%, #621b7d 85%);
+  transition: min-height 0.4s ease-out;
+}
+#questionnaire .content {
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+#questionnaire .content .bg-light {
+  position: absolute;
+  left: -521px;
+  top: 90px;
+  width: 1042px;
+  height: 354px;
+  background-image: url("../images/index-deco-3.png");
+  background-size: auto;
+}
+#questionnaire .content .deco-1 {
+  position: absolute;
+  left: -276px;
+  top: 187px;
+  width: 540px;
+  height: 50px;
+  background-image: url("../images/questionnaire-deco-1.png");
+  background-size: auto;
+}
+#questionnaire .content .deco-1 .btn-rule {
+  position: absolute;
+  left: 380px;
+  top: 19px;
+  width: 96px;
+  height: 37px;
+  cursor: pointer;
+}
+#questionnaire .content .deco-2 {
+  position: absolute;
+  left: -218px;
+  top: 93px;
+  width: 440px;
+  height: 81px;
+  background-image: url("../images/questionnaire-deco-2.png");
+  background-size: auto;
+}
+#questionnaire .content .copyright {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 13px;
+  color: white;
+  width: 1200px;
+  text-align: center;
+  position: absolute;
+  left: -600px;
+  top: 1334px;
+  letter-spacing: 0.2px;
+  transition: top 0.4s ease-out;
+}
+#questionnaire .content .question-block {
+  position: absolute;
+  left: -525px;
+  top: 273px;
+  width: 1051px;
+  height: 1044px;
+  background-color: white;
+  border-radius: 6px;
+}
+#questionnaire .content .question-block .deco-3 {
+  position: absolute;
+  left: 388px;
+  top: 45px;
+  width: 288px;
+  height: 29px;
+  background-image: url("../images/questionnaire-deco-3.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .deco-4 {
+  position: absolute;
+  left: 810px;
+  top: 745px;
+  width: 189px;
+  height: 206px;
+  background-image: url("../images/questionnaire-deco-4.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .btn-next {
+  position: absolute;
+  left: 411px;
+  top: 937px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/questionnaire-btn-next.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#questionnaire .content .question-block .btn-next:active {
+  margin-top: 1px;
+}
+#questionnaire .content .question-block .questions {
+  position: absolute;
+  left: 70px;
+  top: 88px;
+}
+#questionnaire .content .question-block .questions .question {
+  position: relative;
+  margin-bottom: 0;
+}
+#questionnaire .content .question-block .questions .question .title {
+  position: relative;
+  width: 890px;
+  height: 50px;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+}
+#questionnaire .content .question-block .questions .question .title .number {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 21px;
+  color: #7f17bf;
+  display: inline-block;
+  margin: 10px 0 0 24px;
+}
+#questionnaire .content .question-block .questions .question .title .number .num {
+  font-size: 18px;
+}
+#questionnaire .content .question-block .questions .question .title .text {
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: #333333;
+  display: inline-block;
+  margin: 10px 0 0 6px;
+  letter-spacing: 1px;
+}
+#questionnaire .content .question-block .questions .question .options {
+  width: 890px;
+  text-align: center;
+  margin-top: 17px;
+}
+#questionnaire .content .question-block .questions .question .options .option {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+  width: 120px;
+  height: 150px;
+  cursor: pointer;
+}
+#questionnaire .content .question-block .questions .question .options .option .checkbox {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  background-image: url("../images/questionnaire-check-box.png");
+  background-size: auto;
+  width: 30px;
+  height: 30px;
+  background-position: top;
+}
+#questionnaire .content .question-block .questions .question .options .option .icon {
+  position: absolute;
+  left: 18px;
+  top: 8px;
+  width: 100px;
+  height: 100px;
+}
+#questionnaire .content .question-block .questions .question .options .option .text {
+  position: absolute;
+  top: 105px;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: #555555;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 140px;
+}
+#questionnaire .content .question-block .questions .question .options .option.checked-mode .checkbox {
+  background-position-y: bottom;
+}
+#questionnaire .content .question-block .questions .question .options .option.checked-mode .text {
+  color: #7f17bf;
+}
+#questionnaire .content .question-block .questions .q-1 {
+  height: 223px;
+}
+#questionnaire .content .question-block .questions .q-2 {
+  height: 251px;
+}
+#questionnaire .content .question-block .questions .q-3 {
+  height: 121px;
+}
+#questionnaire .content .question-block .questions .q-4 {
+  height: 121px;
+}
+#questionnaire .content .question-block .questions .q-5 {
+  height: 121px;
+}
+#questionnaire .content .question-block .questions .q-3 .options,
+#questionnaire .content .question-block .questions .q-4 .options,
+#questionnaire .content .question-block .questions .q-5 .options {
+  text-align: left;
+  margin-left: 30px;
+}
+#questionnaire .content .question-block .questions .q-3 .options .option,
+#questionnaire .content .question-block .questions .q-4 .options .option,
+#questionnaire .content .question-block .questions .q-5 .options .option {
+  width: auto;
+  height: auto;
+}
+#questionnaire .content .question-block .questions .q-3 .options .option .checkbox,
+#questionnaire .content .question-block .questions .q-4 .options .option .checkbox,
+#questionnaire .content .question-block .questions .q-5 .options .option .checkbox {
+  position: relative;
+  float: left;
+  background-image: url("../images/questionnaire-check-circle.png");
+  background-size: auto;
+  width: 25px;
+  height: 25px;
+  top: 0;
+}
+#questionnaire .content .question-block .questions .q-3 .options .option .text,
+#questionnaire .content .question-block .questions .q-4 .options .option .text,
+#questionnaire .content .question-block .questions .q-5 .options .option .text {
+  position: relative;
+  float: left;
+  width: auto;
+  top: 0;
+  margin-left: 20px;
+  letter-spacing: 0;
+}
+#questionnaire .content .question-block .questions .q-3 .options .option .text {
+  letter-spacing: 1px;
+}
+#questionnaire .content .question-block .questions .q-5 .options,
+#questionnaire .content .question-block .questions .q-4 .options {
+  margin-left: 48px;
+}
+#questionnaire .content .question-block .questions .q-5 .options .option,
+#questionnaire .content .question-block .questions .q-4 .options .option {
+  margin: 0 10px 0 -12px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(1) .icon {
+  background-position-y: 0px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(2) .icon {
+  background-position-y: -100px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(3) .icon {
+  background-position-y: -200px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(4) .icon {
+  background-position-y: -300px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(5) .icon {
+  background-position-y: -400px;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option .icon {
+  background-image: url("../images/questionnaire-q1-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-1 .options .option:nth-child(6) .icon {
+  background-position-y: -500px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(1) .icon {
+  background-position-y: 0px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(2) .icon {
+  background-position-y: -100px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(3) .icon {
+  background-position-y: -200px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(4) .icon {
+  background-position-y: -300px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(5) .icon {
+  background-position-y: -400px;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option .icon {
+  background-image: url("../images/questionnaire-q2-icons.png");
+  background-size: auto;
+}
+#questionnaire .content .question-block .questions .q-2 .options .option:nth-child(6) .icon {
+  background-position-y: -500px;
+}
+#questionnaire .content .form-block {
+  position: absolute;
+  left: -525px;
+  top: 265px;
+  width: 1051px;
+  height: 715px;
+  background-color: white;
+  border-radius: 6px;
+}
+#questionnaire .content .form-block .deco-1 {
+  position: absolute;
+  left: 200px;
+  top: 45px;
+  width: 473px;
+  height: 529px;
+  background-image: url("../images/questionnaire-form-deco-1.png");
+  background-size: auto;
+}
+#questionnaire .content .form-block .btn-send {
+  position: absolute;
+  left: 411px;
+  top: 605px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/questionnaire-form-btn-send.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#questionnaire .content .form-block .btn-send:active {
+  margin-top: 1px;
+}
+#questionnaire .content .form-block .btn-send-verify {
+  position: absolute;
+  left: 609px;
+  top: 275px;
+  width: 147px;
+  height: 40px;
+  background-image: url("../images/questionnaire-form-btn-verify.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#questionnaire .content .form-block .btn-send-verify:active {
+  margin-top: 1px;
+}
+#questionnaire .content .form-block .fields {
+  position: absolute;
+  left: 306px;
+  top: 93px;
+}
+#questionnaire .content .form-block .fields input {
+  position: absolute;
+  padding: 5px 10px;
+  width: 430px;
+  height: 40px;
+  background-color: #f3f3f3;
+  left: 0;
+  border-radius: 0;
+  border: none;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 21px;
+  color: black;
+  letter-spacing: 1px;
+}
+#questionnaire .content .form-block .fields input.alert-mode {
+  padding: 3px 8px;
+  border: 2px solid red;
+}
+#questionnaire .content .form-block .fields select {
+  position: absolute;
+  padding: 5px 10px;
+  width: 450px;
+  height: 50px;
+  background-color: #f3f3f3;
+  border-radius: 0;
+  border: none;
+  font-family: '微軟正黑體', "Heiti TC", serif;
+  font-size: 18px;
+  color: black;
+  letter-spacing: 1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../images/select-arrow.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#questionnaire .content .form-block .fields select.alert-mode {
+  padding: 3px 8px;
+  border: 2px solid red;
+}
+#questionnaire .content .form-block .fields .user-name {
+  top: 0;
+}
+#questionnaire .content .form-block .fields .phone {
+  top: 122px;
+}
+#questionnaire .content .form-block .fields .phone-verify {
+  top: 182px;
+  left: 162px;
+  width: 110px;
+  height: 30px;
+}
+#questionnaire .content .form-block .fields .address-county {
+  top: 272px;
+  width: 220px;
+  background-position: 192px 16px;
+}
+#questionnaire .content .form-block .fields .address-county.alert-mode {
+  background-position: 190px 14px;
+}
+#questionnaire .content .form-block .fields .address-district {
+  top: 272px;
+  left: 230px;
+  width: 220px;
+  background-position: 192px 16px;
+}
+#questionnaire .content .form-block .fields .address-district.alert-mode {
+  background-position: 190px 14px;
+}
+#questionnaire .content .form-block .fields .address-detail {
+  top: 332px;
+}
+#questionnaire .content .form-block .fields .age {
+  top: 392px;
+  width: 450px;
+  background-position: 422px 16px;
+}
+#questionnaire .content .form-block .fields .age.alert-mode {
+  background-position: 420px 14px;
+}
+#questionnaire .content .form-block .fields .rule-notice {
+  position: absolute;
+  left: 0;
+  top: 513px;
+}
+#questionnaire .content .form-block .fields .rule-notice .rule-checkbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#questionnaire .content .form-block .fields .rule-notice .btn-rule {
+  position: absolute;
+  left: 32px;
+  top: -2px;
+  width: 257px;
+  height: 58px;
+  cursor: pointer;
+}
+#questionnaire .content .form-block .fields #twzipcode {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#questionnaire .content .form-block .fields .address-zipcode {
+  display: none;
+}
+#questionnaire .content .form-block .fields .check-female,
+#questionnaire .content .form-block .fields .check-male {
+  position: absolute;
+  top: 75px;
+  background-image: url("../images/questionnaire-form-check-circle.png");
+  background-size: auto;
+  width: 25px;
+  height: 25px;
+  background-position-y: top;
+  cursor: pointer;
+}
+#questionnaire .content .form-block .fields .check-female.checked-mode,
+#questionnaire .content .form-block .fields .check-male.checked-mode {
+  background-position-y: bottom;
+}
+#questionnaire .content .form-block .fields .check-male {
+  left: -3px;
+}
+#questionnaire .content .form-block .fields .check-female {
+  left: 65px;
+}
+#questionnaire .content .form-block .fields .check-rule {
+  position: absolute;
+  left: -3px;
+  top: 457px;
+  background-image: url("../images/questionnaire-check-box.png");
+  background-size: auto;
+  width: 30px;
+  height: 30px;
+  background-position-y: top;
+  cursor: pointer;
+}
+#questionnaire .content .form-block .fields .check-rule.checked-mode {
+  background-position-y: bottom;
+}
+#questionnaire .content .form-block .fields .btn-rule {
+  position: absolute;
+  left: 176px;
+  top: 452px;
+  width: 200px;
+  height: 36px;
+  cursor: pointer;
+}
+#questionnaire.form-mode {
+  min-height: 1183px;
+}
+#questionnaire.form-mode .content .copyright {
+  top: 1000px;
+}
+#popup-questionnaire-step3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 1200px;
+}
+#popup-questionnaire-step3 .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#popup-questionnaire-step3 .content .deco-1 {
+  position: absolute;
+  left: -189px;
+  top: -420px;
+  width: 371px;
+  height: 84px;
+  background-image: url("../images/questionnaire-step3-deco-1.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .deco-2 {
+  position: absolute;
+  left: -212px;
+  top: -529px;
+  width: 440px;
+  height: 81px;
+  background-image: url("../images/questionnaire-deco-2.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .light-1 {
+  position: absolute;
+  left: -450px;
+  top: -580px;
+  width: 900px;
+  height: 900px;
+  background: #bb29d6;
+  background: radial-gradient(circle, rgba(187, 41, 214, 0.7) 15%, rgba(187, 41, 214, 0.1) 50%, rgba(187, 41, 214, 0) 70%);
+}
+#popup-questionnaire-step3 .content .content-all {
+  position: absolute;
+  left: -321px;
+  top: -305px;
+  width: 640px;
+  height: 737px;
+}
+#popup-questionnaire-step3 .content .content-all .content-border {
+  position: absolute;
+}
+#popup-questionnaire-step3 .content .content-all .content-border .border {
+  fill: transparent;
+  stroke-dashoffset: 0;
+  stroke-width: 3px;
+  stroke: url('#cupon-border-color');
+  animation: 1s draw-border linear alternate infinite;
+}
+#popup-questionnaire-step3 .content .content-all .content-image {
+  position: absolute;
+  left: 57px;
+  top: 39px;
+  width: 563px;
+  height: 654px;
+  background-image: url("../images/questionnaire-step3-content.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .content-all .retailer-1 {
+  position: absolute;
+  left: 63px;
+  top: 250px;
+  width: 253px;
+  height: 60px;
+  background-image: url("../images/coupon-retailer-1.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .content-all .retailer-2 {
+  position: absolute;
+  left: 325px;
+  top: 250px;
+  width: 253px;
+  height: 60px;
+  background-image: url("../images/coupon-retailer-2.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .content-all .serial {
+  position: absolute;
+  left: 67px;
+  top: 492px;
+  width: 273px;
+  height: 164px;
+  background-image: url("../images/coupon-serial.png");
+  background-size: auto;
+}
+#popup-questionnaire-step3 .content .content-all .btn-retailer-1,
+#popup-questionnaire-step3 .content .content-all .btn-retailer-2 {
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .content .content-all .retailer-1,
+#popup-questionnaire-step3 .content .content-all .retailer-2 {
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .content .content-all .retailer-1:active,
+#popup-questionnaire-step3 .content .content-all .retailer-2:active {
+  margin-top: 1px;
+}
+#popup-questionnaire-step3 .content .content-all .btn-retailer-1 {
+  position: absolute;
+  left: 321px;
+  top: 140px;
+  width: 84px;
+  height: 40px;
+}
+#popup-questionnaire-step3 .content .content-all .btn-retailer-2 {
+  position: absolute;
+  left: 420px;
+  top: 140px;
+  width: 103px;
+  height: 40px;
+}
+#popup-questionnaire-step3 .content .btn-download {
+  position: absolute;
+  left: -237px;
+  top: 459px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/coupon-btn-download.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .content .btn-download:active {
+  margin-top: 1px;
+}
+#popup-questionnaire-step3 .content .btn-product {
+  position: absolute;
+  left: 7px;
+  top: 459px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/coupon-btn-product.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .content .btn-product:active {
+  margin-top: 1px;
+}
+#coupon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 1480px;
+}
+#coupon .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#coupon .content .light-1 {
+  position: absolute;
+  left: -450px;
+  top: -610px;
+  width: 900px;
+  height: 900px;
+  background: #bb29d6;
+  background: radial-gradient(circle, rgba(187, 41, 214, 0.7) 15%, rgba(187, 41, 214, 0.1) 50%, rgba(187, 41, 214, 0) 70%);
+}
+#coupon .content .title-1 {
+  position: absolute;
+  left: -265px;
+  top: -565px;
+  width: 532px;
+  height: 266px;
+  background-image: url("../images/index-deco-1.png");
+  background-size: auto;
+}
+#coupon .content .title-2 {
+  position: absolute;
+  left: -260px;
+  top: -630px;
+  width: 585px;
+  height: 65px;
+  background-image: url("../images/index-deco-5.png");
+  background-size: auto;
+}
+#coupon .content .light-2 {
+  position: absolute;
+  left: 173px;
+  top: -392px;
+  width: 179px;
+  height: 132px;
+  background-image: url("../images/index-light-2.png");
+  background-size: auto;
+}
+#coupon .content .content-all {
+  position: absolute;
+  left: -321px;
+  top: -274px;
+  width: 640px;
+  height: 833px;
+  background-image: url("../images/coupon-content-all.png");
+  background-size: auto;
+  background: none;
+}
+#coupon .content .content-all .content-border {
+  position: absolute;
+}
+#coupon .content .content-all .content-border .border {
+  fill: transparent;
+  stroke-dashoffset: 0;
+  stroke-width: 3px;
+  stroke: url('#cupon-border-color');
+  animation: 1s draw-border linear alternate infinite;
+}
+#coupon .content .content-all .deco-1 {
+  position: absolute;
+  left: 110px;
+  top: 173px;
+  width: 426px;
+  height: 53px;
+  background-image: url("../images/coupon-deco-1.png");
+  background-size: auto;
+}
+#coupon .content .content-all .content-image {
+  position: absolute;
+  left: 57px;
+  top: 9px;
+  width: 581px;
+  height: 780px;
+  background-image: url("../images/coupon-deco-5.png");
+  background-size: auto;
+}
+#coupon .content .content-all .retailer-1 {
+  position: absolute;
+  left: 63px;
+  top: 349px;
+  width: 253px;
+  height: 60px;
+  background-image: url("../images/coupon-retailer-1.png");
+  background-size: auto;
+}
+#coupon .content .content-all .retailer-2 {
+  position: absolute;
+  left: 325px;
+  top: 349px;
+  width: 253px;
+  height: 60px;
+  background-image: url("../images/coupon-retailer-2.png");
+  background-size: auto;
+}
+#coupon .content .content-all .serial {
+  position: absolute;
+  left: 67px;
+  top: 592px;
+  width: 273px;
+  height: 164px;
+  background-image: url("../images/coupon-serial.png");
+  background-size: auto;
+}
+#coupon .content .content-all .btn-retailer-1,
+#coupon .content .content-all .btn-retailer-2 {
+  cursor: pointer;
+}
+#coupon .content .content-all .retailer-1,
+#coupon .content .content-all .retailer-2 {
+  cursor: pointer;
+}
+#coupon .content .content-all .retailer-1:active,
+#coupon .content .content-all .retailer-2:active {
+  margin-top: 1px;
+}
+#coupon .content .content-all .btn-retailer-1 {
+  position: absolute;
+  left: 321px;
+  top: 233px;
+  width: 84px;
+  height: 40px;
+}
+#coupon .content .content-all .btn-retailer-2 {
+  position: absolute;
+  left: 420px;
+  top: 233px;
+  width: 103px;
+  height: 40px;
+}
+#coupon .content .btn-download {
+  position: absolute;
+  left: -237px;
+  top: 589px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/coupon-btn-download.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#coupon .content .btn-download:active {
+  margin-top: 1px;
+}
+#coupon .content .btn-product {
+  position: absolute;
+  left: 7px;
+  top: 589px;
+  width: 230px;
+  height: 60px;
+  background-image: url("../images/coupon-btn-product.png");
+  background-size: auto;
+  cursor: pointer;
+}
+#coupon .content .btn-product:active {
+  margin-top: 1px;
+}
+#video-player {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 100;
+}
+#video-player .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #430d5e;
+  opacity: 0.95;
+}
+#video-player .video-container {
+  position: fixed;
+  width: calc(100% - 80px * 2);
+  height: 0;
+  top: 50%;
+  left: 75px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.6);
+  margin-top: 30px;
+}
+#video-player .video-container #ytplayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#video-player .video-container .btn-close {
+  position: absolute;
+  right: -15px;
+  top: -59px;
+  width: 64px;
+  height: 64px;
+  background-image: url("../images/video-btn-close.png");
+  background-size: auto;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#video-player .video-container .btn-close:hover {
+  cursor: pointer;
+}
+#video-player .video-container .btn-close .hover-clip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/none");
+  background-size: auto;
+  background-position: "video-btn-close.png";
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+#video-player .video-container .btn-close .hover-clip:hover {
+  opacity: 1;
+}
+#video-player .video-container .btn-close .hover-clip.selected {
+  opacity: 1;
+}
+#video-player.open-mode .video-container .btn-close {
+  opacity: 1;
+}
+@media (max-width: 750px) {
+  .pc-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+  /* main loading */
+  #main-loading .content {
+    width: 285px;
+    height: 287px;
+    margin-left: -142.5px;
+    margin-top: -143.5px;
+    background-image: url("../images/loading-content.m.png");
+    background-size: auto;
+  }
+  #main-loading #main-loading-text {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 40px;
+    color: #ffe16f;
+    width: 400px;
+    height: 36px;
+    margin-left: -200px;
+    margin-top: 34px;
+  }
+  #layout {
+    width: 750px;
+    margin-left: -375px;
+  }
+  #layout .all {
+    width: 750px;
+    height: 6300px;
+    background-image: url("../images/layout/all.m.png");
+    background-size: auto;
+  }
+  #layout .questionnaire-step-2 {
+    width: 750px;
+    height: 4838px;
+    background-image: url("../images/layout/questionnaire-step-2.m.jpg");
+    background-size: auto;
+  }
+  /* popup container */
+  #popup-container {
+    width: 100%;
+    min-width: 750px;
+  }
+  #popup-layout {
+    width: 750px;
+    margin-left: -375px;
+    opacity: 0.5;
+    display: none;
+  }
+  #popup-layout .wrapper .nav {
+    position: relative;
+    width: 750px;
+    height: 1334px;
+    background-image: url("../images/layout/nav.m.png");
+    background-size: auto;
+  }
+  #popup-layout .wrapper .popup-questionnaire-step3 {
+    position: relative;
+    width: 750px;
+    height: 1880px;
+    background-image: url("../images/layout/popup-questionnare-step3.m.png");
+    background-size: auto;
+  }
+  #popup-layout .wrapper .coupon {
+    position: relative;
+    width: 750px;
+    height: 1550px;
+    background-image: url("../images/layout/coupon.m.png");
+    background-size: auto;
+  }
+  #main-page {
+    position: relative;
+    width: 750px;
+    min-width: 750px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #main-page.loading-mode {
+    height: 100vh;
+  }
+  /* nav */
+  #nav {
+    width: 750px;
+    left: 0;
+    margin-left: 0;
+  }
+  #nav .btn-trigger {
+    top: 32px;
+    left: 50%;
+    margin-left: 281px;
+  }
+  #nav .btn-trigger .v-1 {
+    background-image: url("../images/nav-trigger-icon.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #nav .btn-trigger .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-trigger-icon-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #nav .nav-logo {
+    width: 230px;
+    height: 60px;
+    top: 27px;
+    left: 50%;
+    margin-left: -339px;
+  }
+  #nav .nav-logo .v-1 {
+    background-image: url("../images/nav-logo.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #nav .nav-logo .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-logo-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #nav .base {
+    position: absolute;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #nav.v2-mode .base {
+    top: 0;
+  }
+  #nav.v2-mode .btn-trigger .v-1,
+  #nav.v2-mode .nav-logo .v-1 {
+    opacity: 0;
+  }
+  #nav.v2-mode .btn-trigger .v-2,
+  #nav.v2-mode .nav-logo .v-2 {
+    opacity: 1;
+  }
+  #nav-container {
+    min-height: 980px;
+  }
+  #nav-container .nav-btn-close {
+    right: 34px;
+    top: 32px;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+  }
+  #nav-container .wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 750px;
+    height: 800px;
+    left: 50%;
+    top: 50%;
+    margin-left: -375px;
+    margin-top: -400px;
+  }
+  #nav-container .wrapper .btn-1 {
+    margin-top: 58px;
+  }
+  #nav-container .wrapper .line {
+    position: relative;
+    width: 475px;
+    height: 1px;
+    margin: 0 auto 0;
+    background-color: #8b789b;
+  }
+  #nav-container .wrapper .btn {
+    position: relative;
+    width: 475px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-image: url("../images/nav-btn-image.m.png");
+    background-size: auto;
+  }
+  #nav-container .wrapper .btn:hover {
+    cursor: pointer;
+  }
+  #nav-container .wrapper .btn-5 {
+    background-position-y: -480px;
+  }
+  #nav-container .wrapper .btn-5:active {
+    background-position-y: -479px;
+  }
+  #nav-container .wrapper .btn-4 {
+    background-position-y: -360px;
+  }
+  #nav-container .wrapper .btn-4:active {
+    background-position-y: -359px;
+  }
+  #nav-container .wrapper .btn-3 {
+    background-position-y: -240px;
+  }
+  #nav-container .wrapper .btn-3:active {
+    background-position-y: -239px;
+  }
+  #nav-container .wrapper .btn-2 {
+    background-position-y: -120px;
+  }
+  #nav-container .wrapper .btn-2:active {
+    background-position-y: -119px;
+  }
+  #nav-container .wrapper .btn-1 {
+    background-position-y: 0px;
+  }
+  #nav-container .wrapper .btn-1:active {
+    background-position-y: 1px;
+  }
+  /* index */
+  #index {
+    width: 750px;
+    min-height: 1730px;
+    background: linear-gradient(0deg, #370246 57%, #9d46b7 98%);
+  }
+  #index .light-1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 571px;
+    height: 628px;
+    background-image: url("../images/index-light-1.m.png");
+    background-size: auto;
+    left: 50%;
+    margin-left: -285px;
+  }
+  #index .contents .deco-1 {
+    position: absolute;
+    left: -288px;
+    top: -663px;
+    width: 527px;
+    height: 269px;
+    background-image: url("../images/index-deco-1.m.png");
+    background-size: auto;
+  }
+  #index .contents .deco-2 {
+    position: absolute;
+    left: -357px;
+    top: -258px;
+    width: 387px;
+    height: 394px;
+    background-image: url("../images/index-deco-2.m.png");
+    background-size: auto;
+  }
+  #index .contents .deco-3 {
+    position: absolute;
+    left: -860px;
+    top: -150px;
+    width: 1042px;
+    height: 354px;
+    background-image: url("../images/index-deco-3.png");
+    background-size: auto;
+  }
+  #index .contents .deco-4 {
+    position: absolute;
+    left: -293px;
+    top: -366px;
+    width: 541px;
+    height: 60px;
+    background-image: url("../images/index-deco-4.m.png");
+    background-size: auto;
+  }
+  #index .contents .deco-5 {
+    position: absolute;
+    left: -300px;
+    top: -734px;
+    width: 598px;
+    height: 66px;
+    background-image: url("../images/index-deco-5.m.png");
+    background-size: auto;
+  }
+  #index .contents .deco-6 {
+    position: absolute;
+    left: -400px;
+    top: 128px;
+    width: 745px;
+    height: 209px;
+    background-image: url("../images/index-deco-6.m.png");
+    background-size: auto;
+  }
+  #index .contents .deco-6 .deco-6-2 {
+    display: none;
+  }
+  #index .contents .deco-6 .deco-6-3 {
+    position: absolute;
+    left: 458px;
+    top: 48px;
+    width: 103px;
+    height: 103px;
+    background-image: url("../images/index-deco-6-3.png");
+    background-size: auto;
+  }
+  #index .contents .deco-7 {
+    position: absolute;
+    left: -324px;
+    top: 396px;
+    width: 648px;
+    height: 421px;
+    background-image: url("../images/index-deco-7.m.png");
+    background-size: auto;
+  }
+  #index .contents .light-1 {
+    position: absolute;
+    left: -280px;
+    top: -535px;
+    width: 571px;
+    height: 628px;
+    background-image: url("../images/index-light-1.m.png");
+    background-size: auto;
+  }
+  #index .contents .light-2 {
+    position: absolute;
+    left: 153px;
+    top: -481px;
+    width: 169px;
+    height: 127px;
+    background-image: url("../images/index-light-2.m.png");
+    background-size: auto;
+  }
+  #index .contents .users {
+    position: absolute;
+    left: 7px;
+    top: -220px;
+    width: 343px;
+    height: 358px;
+  }
+  #index .contents .users .border-svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #index .contents .users .border {
+    fill: transparent;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+    stroke: url('#index-border-color');
+  }
+  #index .contents .users .user-photo.mobile-only {
+    position: absolute;
+    left: 35px;
+    top: 80px;
+  }
+  #index .contents .users .user-photo.mobile-only .user-photo-image {
+    position: absolute;
+    clip-path: url(#user-photo-clip-2);
+  }
+  #index .contents .users .arrow-down-container {
+    position: absolute;
+    left: 85px;
+    top: 71px;
+    width: 240px;
+    height: 211px;
+  }
+  #index .contents .users .arrow-down-container .arrow-down {
+    background-image: url("../images/index-user-arrow-down.m.png");
+    background-size: auto;
+  }
+  #index .contents .users .user-texts {
+    position: absolute;
+    left: -2px;
+    top: -36px;
+  }
+  #index .contents .users .user-texts .user-text {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 350px;
+    height: 280px;
+    background-image: url("../images/index-user-text.m.png");
+    background-size: auto;
+  }
+  #index .contents .users .user-texts .text-1 {
+    background-position-y: 0px;
+  }
+  #index .contents .users .user-texts .text-2 {
+    background-position-y: -280px;
+  }
+  #index .contents .users .user-texts .text-3 {
+    background-position-y: -560px;
+  }
+  #index .contents .users .user-texts .text-4 {
+    background-position-y: -840px;
+  }
+  #index .contents .users .user-texts .text-5 {
+    background-position-y: -1120px;
+  }
+  #index .right-content {
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+  #index .right-content .btn-coupon-1 {
+    position: absolute;
+    left: -64px;
+    top: -736px;
+    width: 64px;
+    height: 230px;
+    background-image: url("../images/index-btn-coupon-1.m.png");
+    background-size: auto;
+  }
+  #index .right-content .btn-coupon-2 {
+    position: absolute;
+    left: -64px;
+    top: -496px;
+    width: 64px;
+    height: 251px;
+    background-image: url("../images/index-btn-coupon-2.m.png");
+    background-size: auto;
+  }
+  /* detail */
+  #detail {
+    min-height: 1228px;
+  }
+  #detail .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  #detail .background .deco-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
+  #detail .background .deco-left .deco-1 {
+    position: absolute;
+    left: 4px;
+    top: -149px;
+    width: 769px;
+    height: 763px;
+    background-image: url("../images/detail-bg-deco-1.png");
+    background-size: auto;
+  }
+  #detail .background .deco-left .deco-2 {
+    position: absolute;
+    left: -535px;
+    top: -380px;
+    width: 1622px;
+    height: 1122px;
+    background-image: url("../images/detail-bg-deco-2.png");
+    background-size: auto;
+  }
+  #detail .background .deco-right {
+    display: none;
+  }
+  #detail .content {
+    margin-top: -14px;
+  }
+  #detail .content .deco-1 {
+    position: absolute;
+    left: -300px;
+    top: -540px;
+    width: 304px;
+    height: 52px;
+    background-image: url("../images/detail-deco-1.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-2 {
+    position: absolute;
+    left: -302px;
+    top: -462px;
+    width: 609px;
+    height: 60px;
+    background-image: url("../images/detail-deco-2.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-3 {
+    position: absolute;
+    left: 28px;
+    top: -364px;
+    width: 299px;
+    height: 397px;
+    background-image: url("../images/detail-deco-3.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-4 {
+    position: absolute;
+    left: -290px;
+    top: -213px;
+    width: 230px;
+    height: 230px;
+    background-image: url("../images/detail-deco-4.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-6 {
+    position: absolute;
+    left: -247px;
+    top: 75px;
+    width: 502px;
+    height: 69px;
+    background-image: url("../images/detail-deco-6.m.png");
+    background-size: auto;
+  }
+  #detail .content .detail-title {
+    width: 609px;
+    height: 60px;
+  }
+  #detail .content .detail-title div {
+    position: absolute;
+    background-image: url(../images/detail-deco-2.m.png);
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(1) {
+    left: 1px;
+    top: 0;
+    width: 52px;
+    height: 60px;
+    background-position: -1px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(2) {
+    left: 57px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -57px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(3) {
+    left: 115px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -115px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(4) {
+    left: 173px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -173px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(5) {
+    left: 231px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -231px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(6) {
+    left: 318px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -318px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(7) {
+    left: 376px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -376px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(8) {
+    left: 434px;
+    top: 0;
+    width: 55px;
+    height: 60px;
+    background-position: -434px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(9) {
+    left: 492px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -492px 0;
+  }
+  #detail .content .detail-title > row:nth-child(1) > div:nth-child(10) {
+    left: 550px;
+    top: 0;
+    width: 54px;
+    height: 60px;
+    background-position: -550px 0;
+  }
+  #detail .content .deco-5 {
+    position: absolute;
+    left: -334px;
+    top: -376px;
+    width: 339px;
+    height: 414px;
+    background-image: url("../images/detail-deco-5.m.png");
+    background-size: auto;
+  }
+  #detail .content .bg-light {
+    position: absolute;
+    left: -420px;
+    top: -520px;
+    width: 842px;
+    height: 714px;
+    background-image: url("../images/detail-bg-light.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-7 {
+    position: absolute;
+    left: -326px;
+    top: 161px;
+    width: 682px;
+    height: 415px;
+    background-image: url("../images/detail-deco-7.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-7 .deco-7-2 {
+    position: absolute;
+    left: 282px;
+    top: 151px;
+    width: 88px;
+    height: 88px;
+    background-image: url("../images/detail-deco-7-2.m.png");
+    background-size: auto;
+  }
+  #detail .content .deco-7 .deco-7-3 {
+    position: absolute;
+    left: 81px;
+    top: 51px;
+    width: 492px;
+    height: 316px;
+    background-image: url("../images/detail-deco-7-3.m.png");
+    background-size: auto;
+  }
+  /* questionnaire */
+  #questionnaire {
+    min-height: 3342px;
+    background: #682180;
+  }
+  #questionnaire .content .bg-light {
+    display: none;
+  }
+  #questionnaire .content .deco-1 {
+    position: absolute;
+    left: -298px;
+    top: 221px;
+    width: 598px;
+    height: 129px;
+    background-image: url("../images/questionnaire-deco-1.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .deco-1 .btn-rule {
+    position: absolute;
+    left: 390px;
+    top: 83px;
+    width: 143px;
+    height: 54px;
+    cursor: pointer;
+  }
+  #questionnaire .content .deco-2 {
+    position: absolute;
+    left: -252px;
+    top: 90px;
+    width: 526px;
+    height: 105px;
+    background-image: url("../images/questionnaire-deco-2.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .copyright {
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 20px;
+    color: white;
+    width: 750px;
+    text-align: center;
+    position: absolute;
+    left: -375px;
+    top: 3184px;
+    letter-spacing: 0.2px;
+    transition: top 0.4s ease-out;
+  }
+  #questionnaire .content .question-block {
+    position: absolute;
+    left: -325px;
+    top: 389px;
+    width: 650px;
+    height: 2770px;
+    border-radius: 20px;
+  }
+  #questionnaire .content .question-block .deco-3 {
+    position: absolute;
+    left: 135px;
+    top: 50px;
+    width: 380px;
+    height: 40px;
+    background-image: url("../images/questionnaire-deco-3.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .deco-4 {
+    display: none;
+  }
+  #questionnaire .content .question-block .btn-next {
+    position: absolute;
+    left: 20px;
+    top: 2639px;
+    width: 610px;
+    height: 80px;
+    background-image: url("../images/questionnaire-btn-next.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions {
+    position: absolute;
+    left: 20px;
+    top: 120px;
+  }
+  #questionnaire .content .question-block .questions .question {
+    margin-bottom: 0;
+  }
+  #questionnaire .content .question-block .questions .question .title {
+    width: 610px;
+    height: 75px;
+    border-radius: 6px;
+  }
+  #questionnaire .content .question-block .questions .question .title .number {
+    display: block;
+    float: left;
+    width: 60px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 40px;
+    color: #7f17bf;
+    margin: 10px 0 0 22px;
+  }
+  #questionnaire .content .question-block .questions .question .title .number .num {
+    font-size: 35px;
+  }
+  #questionnaire .content .question-block .questions .question .title .text {
+    display: block;
+    float: left;
+    width: 500px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 32px;
+    color: #333333;
+    margin: 17px 0 0 6px;
+    letter-spacing: 0;
+  }
+  #questionnaire .content .question-block .questions .question .title.two-line-mode {
+    height: 121px;
+  }
+  #questionnaire .content .question-block .questions .question .options {
+    width: 610px;
+    text-align: center;
+    margin-top: 17px;
+  }
+  #questionnaire .content .question-block .questions .question .options .option {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 5px;
+    width: 190px;
+    height: 325px;
+    cursor: pointer;
+  }
+  #questionnaire .content .question-block .questions .question .options .option .checkbox {
+    left: 70px;
+    top: 7px;
+    background-image: url("../images/questionnaire-check-box.m.png");
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+    background-position: top;
+  }
+  #questionnaire .content .question-block .questions .question .options .option .icon {
+    left: 25px;
+    top: 70px;
+    width: 150px;
+    height: 150px;
+  }
+  #questionnaire .content .question-block .questions .question .options .option .text {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 30px;
+    color: #555555;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 190px;
+    line-height: 35px;
+  }
+  #questionnaire .content .question-block .questions .question .options .option.checked-mode .checkbox {
+    background-position-y: bottom;
+  }
+  #questionnaire .content .question-block .questions .question .options .option.checked-mode .text {
+    color: #7f17bf;
+  }
+  #questionnaire .content .question-block .questions .q-1 {
+    height: 810px;
+  }
+  #questionnaire .content .question-block .questions .q-2 {
+    height: 760px;
+  }
+  #questionnaire .content .question-block .questions .q-3 {
+    height: 288px;
+  }
+  #questionnaire .content .question-block .questions .q-4 {
+    height: 339px;
+  }
+  #questionnaire .content .question-block .questions .q-5 {
+    height: 121px;
+  }
+  #questionnaire .content .question-block .questions .q-3 .options,
+  #questionnaire .content .question-block .questions .q-4 .options,
+  #questionnaire .content .question-block .questions .q-5 .options {
+    text-align: left;
+    margin-left: 0;
+  }
+  #questionnaire .content .question-block .questions .q-3 .options .option,
+  #questionnaire .content .question-block .questions .q-4 .options .option,
+  #questionnaire .content .question-block .questions .q-5 .options .option {
+    left: 0;
+    width: 305px;
+    height: 50px;
+    margin: 5px 0 21px 0;
+    float: left;
+  }
+  #questionnaire .content .question-block .questions .q-3 .options .option .checkbox,
+  #questionnaire .content .question-block .questions .q-4 .options .option .checkbox,
+  #questionnaire .content .question-block .questions .q-5 .options .option .checkbox {
+    position: relative;
+    float: left;
+    background-image: url("../images/questionnaire-check-circle.m.png");
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 23px;
+  }
+  #questionnaire .content .question-block .questions .q-3 .options .option .text,
+  #questionnaire .content .question-block .questions .q-4 .options .option .text,
+  #questionnaire .content .question-block .questions .q-5 .options .option .text {
+    position: relative;
+    float: left;
+    width: auto;
+    top: 12px;
+    margin-left: 25px;
+    letter-spacing: 0;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(1) .icon {
+    background-position-y: 0px;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(2) .icon {
+    background-position-y: -150px;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(3) .icon {
+    background-position-y: -300px;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(4) .icon {
+    background-position-y: -450px;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(5) .icon {
+    background-position-y: -600px;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option .icon {
+    background-image: url("../images/questionnaire-q1-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-1 .options .option:nth-child(6) .icon {
+    background-position-y: -750px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(1) .icon {
+    background-position-y: 0px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(2) .icon {
+    background-position-y: -150px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(3) .icon {
+    background-position-y: -300px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(4) .icon {
+    background-position-y: -450px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(5) .icon {
+    background-position-y: -600px;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option .icon {
+    background-image: url("../images/questionnaire-q2-icons.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .question-block .questions .q-2 .options .option:nth-child(6) .icon {
+    background-position-y: -750px;
+  }
+  #questionnaire .content .form-block {
+    position: absolute;
+    left: -325px;
+    top: 390px;
+    width: 650px;
+    height: 1380px;
+    border-radius: 20px;
+  }
+  #questionnaire .content .form-block .deco-1 {
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    width: 570px;
+    height: 1279px;
+    background-image: url("../images/questionnaire-form-deco-1.m.png");
+    background-size: auto;
+  }
+  #questionnaire .content .form-block .btn-send {
+    position: absolute;
+    left: 40px;
+    top: 1249px;
+    width: 570px;
+    height: 80px;
+    background-image: url("../images/questionnaire-form-btn-send.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #questionnaire .content .form-block .btn-send:active {
+    margin-top: 1px;
+  }
+  #questionnaire .content .form-block .btn-send-verify {
+    position: absolute;
+    left: 40px;
+    top: 615px;
+    width: 570px;
+    height: 80px;
+    background-image: url("../images/questionnaire-form-btn-verify.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #questionnaire .content .form-block .btn-send-verify:active {
+    margin-top: 1px;
+  }
+  #questionnaire .content .form-block .fields {
+    position: absolute;
+    left: 40px;
+    top: 176px;
+  }
+  #questionnaire .content .form-block .fields input {
+    padding: 5px 10px;
+    width: 550px;
+    height: 70px;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 32px;
+    color: black;
+    letter-spacing: 1px;
+  }
+  #questionnaire .content .form-block .fields select {
+    position: absolute;
+    padding: 5px 10px;
+    width: 450px;
+    height: 80px;
+    background-color: #f3f3f3;
+    font-family: '微軟正黑體', "Heiti TC", serif;
+    font-size: 32px;
+    color: black;
+    letter-spacing: 1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url("../images/select-arrow.m.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+  #questionnaire .content .form-block .fields .user-name {
+    top: 0;
+  }
+  #questionnaire .content .form-block .fields .phone {
+    top: 259px;
+  }
+  #questionnaire .content .form-block .fields .phone-verify {
+    top: 349px;
+    left: 243px;
+    width: 307px;
+    height: 70px;
+  }
+  #questionnaire .content .form-block .fields .address-county {
+    top: 658px;
+    width: 275px;
+    background-position: 227px 31px;
+  }
+  #questionnaire .content .form-block .fields .address-county.alert-mode {
+    background-position: 225px 29px;
+  }
+  #questionnaire .content .form-block .fields .address-district {
+    top: 658px;
+    left: 294px;
+    width: 275px;
+    background-position: 227px 31px;
+  }
+  #questionnaire .content .form-block .fields .address-district.alert-mode {
+    background-position: 225px 29px;
+  }
+  #questionnaire .content .form-block .fields .address-detail {
+    top: 748px;
+  }
+  #questionnaire .content .form-block .fields .age {
+    left: 81px;
+    top: 868px;
+    width: 488px;
+    background-position: 440px 31px;
+  }
+  #questionnaire .content .form-block .fields .age.alert-mode {
+    background-position: 438px 29px;
+  }
+  #questionnaire .content .form-block .fields .rule-notice {
+    position: absolute;
+    left: 0;
+    top: 513px;
+  }
+  #questionnaire .content .form-block .fields .rule-notice .rule-checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #questionnaire .content .form-block .fields .rule-notice .btn-rule {
+    position: absolute;
+    left: 32px;
+    top: -2px;
+    width: 257px;
+    height: 58px;
+    cursor: pointer;
+  }
+  #questionnaire .content .form-block .fields #twzipcode {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #questionnaire .content .form-block .fields .address-zipcode {
+    display: none;
+  }
+  #questionnaire .content .form-block .fields .check-female,
+  #questionnaire .content .form-block .fields .check-male {
+    position: absolute;
+    top: 110px;
+    background-image: url("../images/questionnaire-form-check-circle.m.png");
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+    background-position-y: top;
+    cursor: pointer;
+  }
+  #questionnaire .content .form-block .fields .check-female.checked-mode,
+  #questionnaire .content .form-block .fields .check-male.checked-mode {
+    background-position-y: bottom;
+  }
+  #questionnaire .content .form-block .fields .check-male {
+    left: 110px;
+  }
+  #questionnaire .content .form-block .fields .check-female {
+    left: 243px;
+  }
+  #questionnaire .content .form-block .fields .check-rule {
+    left: -6px;
+    top: 979px;
+    background-image: url("../images/questionnaire-check-box.m.png");
+    background-size: auto;
+    width: 60px;
+    height: 60px;
+    background-position-y: top;
+    cursor: pointer;
+  }
+  #questionnaire .content .form-block .fields .check-rule.checked-mode {
+    background-position-y: bottom;
+  }
+  #questionnaire .content .form-block .fields .btn-rule {
+    position: absolute;
+    left: 261px;
+    top: 988px;
+    width: 287px;
+    height: 45px;
+  }
+  #questionnaire.form-mode {
+    min-height: 1882px;
+  }
+  #questionnaire.form-mode .content .copyright {
+    top: 1786px;
+  }
+  #popup-questionnaire-step3 {
+    min-height: 1900px;
+  }
+  #popup-questionnaire-step3 .content {
+    margin-top: -50px;
+    left: 50%;
+    top: 50%;
+  }
+  #popup-questionnaire-step3 .content .deco-1 {
+    position: absolute;
+    left: -251px;
+    top: -607px;
+    width: 502px;
+    height: 121px;
+    background-image: url("../images/questionnaire-step3-deco-1.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .deco-2 {
+    position: absolute;
+    left: -249px;
+    top: -738px;
+    width: 526px;
+    height: 105px;
+    background-image: url("../images/questionnaire-deco-2.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .light-1 {
+    display: none;
+  }
+  #popup-questionnaire-step3 .content .content-all {
+    position: absolute;
+    left: -325px;
+    top: -438px;
+    width: 650px;
+    height: 1170px;
+  }
+  #popup-questionnaire-step3 .content .content-all .content-image {
+    position: absolute;
+    left: 41px;
+    top: 45px;
+    width: 602px;
+    height: 1069px;
+    background-image: url("../images/questionnaire-step3-content.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .content-all .retailer-1 {
+    position: absolute;
+    left: 70px;
+    top: 398px;
+    width: 250px;
+    height: 59px;
+    background-image: url("../images/coupon-retailer-1.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .content-all .retailer-2 {
+    position: absolute;
+    left: 330px;
+    top: 398px;
+    width: 250px;
+    height: 59px;
+    background-image: url("../images/coupon-retailer-2.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .content-all .serial {
+    position: absolute;
+    left: 40px;
+    top: 769px;
+    width: 570px;
+    height: 270px;
+    background-image: url("../images/coupon-serial.m.png");
+    background-size: auto;
+  }
+  #popup-questionnaire-step3 .content .content-all .btn-retailer-1 {
+    position: absolute;
+    left: 421px;
+    top: 200px;
+    width: 105px;
+    height: 51px;
+  }
+  #popup-questionnaire-step3 .content .content-all .btn-retailer-2 {
+    position: absolute;
+    left: 60px;
+    top: 247px;
+    width: 138px;
+    height: 51px;
+  }
+  #popup-questionnaire-step3 .content .btn-download {
+    position: absolute;
+    left: -323px;
+    top: 769px;
+    width: 316px;
+    height: 80px;
+    background-image: url("../images/coupon-btn-download.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #popup-questionnaire-step3 .content .btn-download:active {
+    margin-top: 1px;
+  }
+  #popup-questionnaire-step3 .content .btn-product {
+    position: absolute;
+    left: 8px;
+    top: 769px;
+    width: 316px;
+    height: 80px;
+    background-image: url("../images/coupon-btn-product.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #popup-questionnaire-step3 .content .btn-product:active {
+    margin-top: 1px;
+  }
+  #coupon {
+    min-height: 1950px;
+  }
+  #coupon .content {
+    margin-top: -200px;
+  }
+  #coupon .content .light-1 {
+    display: none;
+  }
+  #coupon .content .content-all {
+    position: absolute;
+    left: -325px;
+    top: -264px;
+    width: 650px;
+    height: 1248px;
+  }
+  #coupon .content .content-all .deco-1 {
+    position: absolute;
+    left: 70px;
+    top: 208px;
+    width: 511px;
+    height: 63px;
+    background-image: url("../images/coupon-deco-1.m.png");
+    background-size: auto;
+  }
+  #coupon .content .content-all .content-image {
+    position: absolute;
+    left: 40px;
+    top: -5px;
+    width: 602px;
+    height: 1196px;
+    background-image: url("../images/coupon-deco-5.m.png");
+    background-size: auto;
+  }
+  #coupon .content .content-all .retailer-1 {
+    position: absolute;
+    left: 70px;
+    top: 478px;
+    width: 250px;
+    height: 59px;
+    background-image: url("../images/coupon-retailer-1.m.png");
+    background-size: auto;
+  }
+  #coupon .content .content-all .retailer-2 {
+    position: absolute;
+    left: 330px;
+    top: 478px;
+    width: 250px;
+    height: 59px;
+    background-image: url("../images/coupon-retailer-2.m.png");
+    background-size: auto;
+  }
+  #coupon .content .content-all .serial {
+    position: absolute;
+    left: 40px;
+    top: 849px;
+    width: 570px;
+    height: 270px;
+    background-image: url("../images/coupon-serial.m.png");
+    background-size: auto;
+  }
+  #coupon .content .content-all .btn-retailer-1 {
+    position: absolute;
+    left: 421px;
+    top: 282px;
+    width: 105px;
+    height: 50px;
+  }
+  #coupon .content .content-all .btn-retailer-2 {
+    position: absolute;
+    left: 63px;
+    top: 328px;
+    width: 133px;
+    height: 50px;
+  }
+  #coupon .content .btn-download {
+    position: absolute;
+    left: -323px;
+    top: 1019px;
+    width: 316px;
+    height: 80px;
+    background-image: url("../images/coupon-btn-download.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #coupon .content .btn-download:active {
+    margin-top: 1px;
+  }
+  #coupon .content .btn-product {
+    position: absolute;
+    left: 8px;
+    top: 1019px;
+    width: 316px;
+    height: 80px;
+    background-image: url("../images/coupon-btn-product.m.png");
+    background-size: auto;
+    cursor: pointer;
+  }
+  #coupon .content .btn-product:active {
+    margin-top: 1px;
+  }
+}
