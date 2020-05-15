@@ -471,6 +471,7 @@ body {
   background-image: url("../images/index-deco-6.png");
   background-size: auto;
   cursor: pointer;
+  z-index: 1;
 }
 #index .contents .deco-6 .deco-6-2 {
   position: absolute;
@@ -1218,7 +1219,7 @@ body {
   left: 200px;
   top: 45px;
   width: 473px;
-  height: 529px;
+  height: 534px;
   background-image: url("../images/questionnaire-form-deco-1.png");
   background-size: auto;
 }
@@ -1556,16 +1557,143 @@ body {
 #popup-questionnaire-step3 .content .btn-product:active {
   margin-top: 1px;
 }
+#popup-questionnaire-step3 .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #popup-questionnaire-step3 .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #popup-questionnaire-step3.v2-mode .base {
+    top: 0;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close {
+    right: 345px;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#popup-questionnaire-step3 .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#popup-questionnaire-step3 .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #popup-questionnaire-step3 .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #popup-questionnaire-step3 .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #popup-questionnaire-step3.v2-mode .base {
+    top: 0;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close {
+    right: 345px;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #popup-questionnaire-step3.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
 #coupon {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 1480px;
+  min-height: 1580px;
 }
 #coupon .content {
   position: absolute;
   left: 50%;
   top: 50%;
+  margin-top: -50px;
 }
 #coupon .content .light-1 {
   position: absolute;
@@ -1668,14 +1796,6 @@ body {
   background-image: url("../images/coupon-serial.png");
   background-size: auto;
 }
-#coupon .content .content-all .btn-retailer-1,
-#coupon .content .content-all .btn-retailer-2 {
-  cursor: pointer;
-}
-#coupon .content .content-all .retailer-1,
-#coupon .content .content-all .retailer-2 {
-  cursor: pointer;
-}
 #coupon .content .content-all .retailer-1:active,
 #coupon .content .content-all .retailer-2:active {
   margin-top: 1px;
@@ -1719,6 +1839,453 @@ body {
 }
 #coupon .content .btn-product:active {
   margin-top: 1px;
+}
+#coupon .content .note {
+  position: absolute;
+  left: -570px;
+  top: 680px;
+  width: 1140px;
+  height: 95px;
+  background-image: url("../images/coupon-note.png");
+  background-size: auto;
+}
+#coupon .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#coupon .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #coupon .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #coupon .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #coupon .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #coupon .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #coupon.v2-mode .base {
+    top: 0;
+  }
+  #coupon.v2-mode .btn-close {
+    right: 345px;
+  }
+  #coupon.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #coupon.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#coupon .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#coupon .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #coupon .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #coupon .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #coupon .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #coupon .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #coupon.v2-mode .base {
+    top: 0;
+  }
+  #coupon.v2-mode .btn-close {
+    right: 345px;
+  }
+  #coupon.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #coupon.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#rule {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 4390px;
+}
+#rule .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -532.5px;
+  margin-top: -2095px;
+  width: 1065px;
+  height: 4190px;
+  background-image: url("../images/rule-content.png");
+  background-size: auto;
+}
+#rule .content .btn-service,
+#rule .content .btn-privacy {
+  position: absolute;
+  cursor: pointer;
+}
+#rule .content .s-1 {
+  position: absolute;
+  left: 660px;
+  top: 2314px;
+  width: 230px;
+  height: 40px;
+}
+#rule .content .b-1 {
+  position: absolute;
+  left: 524px;
+  top: 3209px;
+  width: 160px;
+  height: 40px;
+}
+#rule .content .b-2 {
+  position: absolute;
+  left: 140px;
+  top: 3244px;
+  width: 509px;
+  height: 40px;
+}
+#rule .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#rule .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #rule .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #rule .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #rule .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #rule .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #rule.v2-mode .base {
+    top: 0;
+  }
+  #rule.v2-mode .btn-close {
+    right: 345px;
+  }
+  #rule.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #rule.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#rule .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#rule .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #rule .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #rule .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #rule .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #rule .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #rule.v2-mode .base {
+    top: 0;
+  }
+  #rule.v2-mode .btn-close {
+    right: 345px;
+  }
+  #rule.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #rule.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#winners {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 2027px;
+}
+#winners .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -325px;
+  margin-top: -913.5px;
+  width: 650px;
+  height: 1827px;
+  background-image: url("../images/winners-content.png");
+  background-size: auto;
+}
+#winners .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#winners .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #winners .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #winners .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #winners .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #winners .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #winners.v2-mode .base {
+    top: 0;
+  }
+  #winners.v2-mode .btn-close {
+    right: 345px;
+  }
+  #winners.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #winners.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
+}
+#winners .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#winners .btn-close .v-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/nav-btn-close.png");
+  background-size: auto;
+}
+@media (max-width: 750px) {
+  #winners .base {
+    position: fixed;
+    width: 750px;
+    height: 120px;
+    top: -120px;
+    background-color: white;
+    transition: top 0.25s ease-out;
+  }
+  #winners .btn-close {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 60px;
+    height: 60px;
+    transition: right 0.25s ease-out;
+  }
+  #winners .btn-close .v-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close.m.png");
+    background-size: auto;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  #winners .btn-close .v-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/nav-btn-close-v2.m.png");
+    background-size: auto;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+  #winners.v2-mode .base {
+    top: 0;
+  }
+  #winners.v2-mode .btn-close {
+    right: 345px;
+  }
+  #winners.v2-mode .btn-close .v-1 {
+    opacity: 0;
+  }
+  #winners.v2-mode .btn-close .v-2 {
+    opacity: 1;
+  }
 }
 #video-player {
   position: fixed;
@@ -2037,8 +2604,6 @@ body {
     top: -663px;
     width: 527px;
     height: 269px;
-    background-image: url("../images/index-deco-1.m.png");
-    background-size: auto;
   }
   #index .contents .deco-2 {
     position: absolute;
@@ -3019,10 +3584,10 @@ body {
     margin-top: 1px;
   }
   #coupon {
-    min-height: 1950px;
+    min-height: 2450px;
   }
   #coupon .content {
-    margin-top: -200px;
+    margin-top: -450px;
   }
   #coupon .content .light-1 {
     display: none;
@@ -3118,5 +3683,80 @@ body {
   }
   #coupon .content .btn-product:active {
     margin-top: 1px;
+  }
+  #coupon .content .note {
+    position: absolute;
+    left: -330px;
+    top: 1140px;
+    width: 660px;
+    height: 430px;
+    background-image: url("../images/coupon-note.m.png");
+    background-size: auto;
+  }
+  #rule {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 11664px;
+  }
+  #rule .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -329.5px;
+    margin-top: -5702px;
+    width: 659px;
+    height: 11404px;
+    background: none;
+  }
+  #rule .content .top {
+    position: absolute;
+    width: 659px;
+    height: 5000px;
+    background-image: url("../images/rule-content.top.m.png");
+    background-size: auto;
+  }
+  #rule .content .bottom {
+    position: absolute;
+    top: 5000px;
+    width: 659px;
+    height: 6404px;
+    background-image: url("../images/rule-content.bottom.m.png");
+    background-size: auto;
+  }
+  #rule .content .s-1 {
+    position: absolute;
+    left: 494px;
+    top: 6397px;
+    width: 84px;
+    height: 40px;
+  }
+  #rule .content .s-2 {
+    position: absolute;
+    left: 40px;
+    top: 6443px;
+    width: 324px;
+    height: 40px;
+  }
+  #rule .content .b-1 {
+    position: absolute;
+    left: 254px;
+    top: 8924px;
+    width: 248px;
+    height: 40px;
+  }
+  #rule .content .b-2 {
+    position: absolute;
+    left: 240px;
+    top: 8971px;
+    width: 329px;
+    height: 40px;
+  }
+  #rule .content .b-3 {
+    position: absolute;
+    left: -10px;
+    top: 9018px;
+    width: 547px;
+    height: 40px;
   }
 }

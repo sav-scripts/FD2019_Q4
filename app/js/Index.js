@@ -25,6 +25,17 @@
                     'event_label': "Q42019_go"
                 });
 
+                window.dotq.push({
+                    'projectId': '10000',
+                    'properties': {
+                        'pixelId': '10093592',
+                        'qstrings': {
+                            'et': 'custom',
+                            'ea': 'submit10093592'
+                        }
+                    }
+                });
+
                 MainPage.scrollToContent("/Questionnaire");
             });
 

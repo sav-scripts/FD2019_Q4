@@ -175,6 +175,14 @@
                     'event_label': "Q42019_Question"
                 });
 
+                console.log(Main.settings.isEnd);
+
+                if(Main.settings.isEnd)
+                {
+                    alert(Main.settings.endMessage);
+                    return;
+                }
+
                 var result = _funcDic.getQuestionResults();
 
                 if(result === null) return;
@@ -189,7 +197,7 @@
 
                 ApiProxy.callApi("questionnaire", sendData, null, function(r)
                 {
-                    console.log(r);
+                    //console.log(r);
 
                     if(r.error)
                     {

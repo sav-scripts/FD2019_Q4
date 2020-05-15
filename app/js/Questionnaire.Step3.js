@@ -20,7 +20,7 @@
 
             var id = "#popup-questionnaire-step3";
 
-            var $container = $(id);
+            var $container = $doms.container = $(id);
 
             $container.find(".btn-download").on("click", function(event)
             {
@@ -59,11 +59,35 @@
             PopupMangaer.regist(id, $container,
                 {
                     containerColor: "linear-gradient(0deg, rgba(76,3,97,1) 51%, rgba(129,26,162,1) 80%)",
-                    toggleContainerClass: "under-nav-mode",
+                    //toggleContainerClass: "under-nav-mode",
                     gtagPage: "Q42019_thanks"
                 });
 
             Main.addSvgBorder($container.find(".content-all"), _borderSize);
+
+
+            // btn close
+            (function(){
+
+                $container.find(".btn-close").on("click", function(event)
+                {
+                    event.preventDefault();
+
+                    PopupMangaer.close(id, {closeAll: false, cb: function()
+                    {
+                        MainPage.scrollToContent("/Index");
+                    }});
+                });
+
+                ScrollListener.addListener(id, function(bound)
+                {
+                    var triggerV2 = (bound.top > 120);
+
+                    $doms.container.toggleClass("v2-mode", triggerV2);
+
+                }).update();
+
+            }());
         }
     };
 

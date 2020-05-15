@@ -73,6 +73,21 @@
                     }, true);
                 });
 
+
+                setupButton(2, function()
+                {
+
+                    gtag('event', 'click', {
+                        'event_category': "Nav",
+                        'event_label': "Q42019_rule"
+                    });
+
+                    self.switchNav(false, function()
+                    {
+                        PopupMangaer.open("#rule");
+                    }, true);
+                });
+
                 setupButton(3, function()
                 {
                     gtag('event', 'click', {
@@ -108,7 +123,18 @@
 
                 setupButton(5, function()
                 {
-                    alert("2019/12/27公佈");
+                    //alert("2019/12/27公佈");
+
+
+                    gtag('event', 'click', {
+                        'event_category': "Nav",
+                        'event_label': "Q42019_winners"
+                    });
+
+                    self.switchNav(false, function()
+                    {
+                        PopupMangaer.open("#winners");
+                    }, true);
                 });
 
 
@@ -132,13 +158,15 @@
 
                 var scrollLeft = $(window).scrollLeft();
 
-                if(scrollLeft > 0)
+                if(scrollLeft >= 0 && Main.viewport.width <= 1366)
                 {
                     $doms.container.css("margin-left", -scrollLeft);
+                    $doms.container.css("left", 0);
                 }
                 else
                 {
                     $doms.container.css("margin-left", "");
+                    $doms.container.css("left", "");
                 }
 
             }).update();

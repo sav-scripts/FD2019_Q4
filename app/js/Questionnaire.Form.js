@@ -138,6 +138,17 @@
                         'event_label': "Q42019_submit"
                     });
 
+                    window.dotq.push(
+                    {
+                        'projectId': '10000',
+                        'properties': {
+                            'pixelId': '10093592',
+                            'qstrings': {
+                                'et': 'custom',
+                                'ea': 'Final10093592'
+                            }
+                    }});
+
                     var $addressCounty = $doms.container.find(".address-county"),
                         $addressDistrict = $doms.container.find(".address-district");
 
@@ -210,7 +221,7 @@
                     }
                     params.age = dom.value;
 
-                    console.log(params);
+                    //console.log(params);
 
                     Loading.progress(Main.settings.defaultPendingText).show();
 

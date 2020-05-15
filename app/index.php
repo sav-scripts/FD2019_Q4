@@ -11,6 +11,13 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
     $site_url = 'http://local.savorks.com/projects/insight/FD2019_Q4/app/';
     $share_image_url = 'http://local.savorks.com/projects/insight/FD2019_Q4/app/share.png';
 }
+
+date_default_timezone_set("Asia/Taipei");
+$now = (new DateTime())->getTimestamp();
+$endDate = (new DateTime('2019-12-21 00:00:01'))->getTimestamp();
+
+$isEnd = $now > $endDate;
+
 ?>
 
 
@@ -69,10 +76,83 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
         gtag('config', _GA_ID_);
     </script>
 
+    <!-- adbert -->
+    <script>
+        (function(w, d, s, r, c, a, m){
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments)
+            }
+            a=d.createElement(s);
+            a.async=1;
+            a.src=r+'&'+Math.random();
+            m=d.getElementsByTagName(s)[0];
+            m.parentNode.insertBefore(a,m);
+        })(window, document, 'script', '//www.techsolutions.com.tw/analytics.js?id=adb5dd21f65554e8&d=http://adbert.techsolutions.com.tw', 'atm');
+
+        atm('send', 'pageview');
+    </script>
+
+    <!-- Multiforce -->
+    <script src="//cdn.doublemax.net/js/rtid.js"></script>
+    <script src="//dmp.eland-tech.com/dmpreceiver/eland_tracker.js"></script>
+    <script async src="https://cdn.doublemax.net/dmp/cft/tracker.js"></script>
+    <script>
+        clickforce_rtid("9113001");
+        ElandTracker.Track({'source':'CAP9113',
+            'trackType':'view',
+            'trackSubfolderDepth':3,
+            'targetType':'usual'
+        });
+        clickforce_rtid("9113002");
+        ElandTracker.Track({'source':'CAP9113',
+            'trackType':'view',
+            'trackSubfolderDepth':3,
+            'targetType':'pageview'
+        });
+        window.cft=window.cft||function(){(cft.q=cft.q||[]).push([].slice.call(arguments))};
+        cft('setSiteId', 'CF-191100051663');
+        cft('setEnableCookie');
+        cft('setViewPercentage');
+        cft('setTPCookie');
+    </script>
+
+    <!-- yahoo -->
+    <script type="application/javascript">(function(w,d,t,r,u){w[u]=w[u]||[];w[u].push({'projectId':'10000','properties':{'pixelId':'10093592'}});var s=d.createElement(t);s.src=r;s.async=true;s.onload=s.onreadystatechange=function(){var y,rs=this.readyState,c=w[u];if(rs&&rs!="complete"&&rs!="loaded"){return}try{y=YAHOO.ywa.I13N.fireBeacon;w[u]=[];w[u].push=function(p){y([p])};y(c)}catch(e){}};var scr=d.getElementsByTagName(t)[0],par=scr.parentNode;par.insertBefore(s,scr)})(window,document,"script","https://s.yimg.com/wi/ytc.js","dotq");</script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 820270677 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-820270677"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-820270677');
+    </script>
+
     <!-- media end -->
 
 </head>
 <body onload="Main.init();">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1275949049238571');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=1275949049238571&ev=PageView&noscript=1"
+            /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
 
     <div id="main-loading">
 
@@ -160,7 +240,7 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
                     <div class="btn-coupon-1"></div>
 <!--                    <div class="btn-coupon-2"></div>-->
-                    <a class="btn-coupon-2" href="https://bit.ly/2Oclysd"></a>
+                    <a class="btn-coupon-2" href="https://bit.ly/2D0yFYE"></a>
 
                 </div>
                 <div class="light-1"></div>
@@ -218,6 +298,12 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
                             </clipPath>
 
                             <image class="user-photo-image p-1" xlink:href="./images/index-user-photo-1.png" x="100" y="0" height="230" width="230"></image>
+                            <!-- image sprite example
+                                <svg class="user-photo-image p-1" x="100" y="0" height="90" width="90" preserveAspectRatio="xMinYMin slice" viewBox="50 50 90 90">
+                                    <image xlink:href="./images/index-user-photo-1.png" x="0" y="0" height="230" width="230" preserveAspectRatio="xMinYMin slice"></image>
+                                </svg>
+                            -->
+
                             <image class="user-photo-image p-2" xlink:href="./images/index-user-photo-2.png" x="100" y="0" height="230" width="230"></image>
                             <image class="user-photo-image p-3" xlink:href="./images/index-user-photo-3.png" x="100" y="0" height="230" width="230"></image>
                             <image class="user-photo-image p-4" xlink:href="./images/index-user-photo-4.png" x="100" y="0" height="230" width="230"></image>
@@ -666,8 +752,16 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
                 </div>
 
                 <div class="btn-download"></div>
-                <a class="btn-product" href="https://bit.ly/2Oclysd"></a>
+                <a class="btn-product" href="https://bit.ly/2D0yFYE"></a>
 
+                <div class="note"></div>
+
+            </div>
+
+            <div class="base"></div>
+            <div class="btn-close">
+                <div class="v-1"></div>
+                <div class="v-2"></div>
             </div>
         </div>
 
@@ -696,9 +790,55 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
                 </div>
 
                 <div class="btn-download"></div>
-                <a class="btn-product" href="https://bit.ly/2Oclysd"></a>
+                <a class="btn-product" href="https://bit.ly/2D0yFYE"></a>
 
             </div>
+
+            <div class="base"></div>
+            <div class="btn-close">
+                <div class="v-1"></div>
+                <div class="v-2"></div>
+            </div>
+        </div>
+
+        <div id="rule">
+
+            <div class="content">
+                <div class="top"></div>
+                <div class="bottom"></div>
+
+                <a class="btn-service s-1" href="mailto:service.insightdigi.com"></a>
+                <a class="btn-service s-2" href="mailto:service.insightdigi.com"></a>
+                <a class="btn-privacy b-1" href="http://www.uni-president.com.tw/other_service/Legal.asp" target="_blank"></a>
+                <a class="btn-privacy b-2" href="http://www.uni-president.com.tw/other_service/Legal.asp" target="_blank"></a>
+                <a class="btn-privacy b-3" href="http://www.uni-president.com.tw/other_service/Legal.asp" target="_blank"></a>
+            </div>
+
+            <div class="base"></div>
+            <div class="btn-close">
+                <div class="v-1"></div>
+                <div class="v-2"></div>
+            </div>
+
+
+        </div>
+
+        <div id="winners">
+
+            <div class="content">
+
+                <div class="title"></div>
+                <div class="details"></div>
+
+            </div>
+
+            <div class="base"></div>
+            <div class="btn-close">
+                <div class="v-1"></div>
+                <div class="v-2"></div>
+            </div>
+
+
         </div>
 
         <div id="nav-container">
@@ -713,7 +853,7 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
                 <div class="btn btn-2"></div>
 
                 <div class="line"></div>
-                <a class="btn btn-3" href="https://bit.ly/2Oclysd"></a>
+                <a class="btn btn-3" href="https://bit.ly/2D0yFYE"></a>
 
                 <div class="line"></div>
                 <div class="btn btn-4"></div>
@@ -776,6 +916,8 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
     <script src="js/Nav.js"></script>
     <script src="js/Loading.js"></script>
     <script src="js/Coupon.js"></script>
+    <script src="js/Rule.js"></script>
+    <script src="js/Winners.js"></script>
     <script src="js/VideoPlayer.js"></script>
     <script src="js/Questionnaire.js"></script>
     <script src="js/Questionnaire.Questions.js"></script>
@@ -792,11 +934,8 @@ if(in_array($_SERVER['HTTP_HOST'], $test_hosts))
 
     <script type="text/javascript">
 
-
-        //        if(Utility.urlParams.use_test_data == '1')
-        //        {
-        //            document.write('<script src="_private_/_API_DATA_.js"><\/script>');
-        //        }
+        window._is_end_ = Boolean(<?=$isEnd?>);
+        console.log(_is_end_);
 
         // loading
         (function(){

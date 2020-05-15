@@ -27,6 +27,8 @@
 
             $doms.parent = $("body");
 
+            window.Rule.init();
+            window.Winners.init();
             window.Coupon.init();
             window.Questionnaire.Step3.init();
 
@@ -35,6 +37,8 @@
 
             //self.open("#popup-questionnaire-step3");
             //self.open("#coupon");
+            //self.open("#rule");
+            self.open("#winners");
         },
 
         /*

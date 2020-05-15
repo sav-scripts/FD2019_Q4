@@ -16,7 +16,10 @@
             apiPath: "./api/",
             apiExtension: ".php",
             platform: "",
-            defaultPendingText: "資料處理中"
+            defaultPendingText: "資料處理中",
+
+            isEnd: false,
+            endMessage: "本活動已於12/20結束! 謝謝您的支持"
         },
 
 
@@ -44,6 +47,11 @@
             if(window._API_DATA_)
             {
                 ApiProxy.applyTestData(_API_DATA_);
+            }
+
+            if(window._is_end_)
+            {
+                self.settings.isEnd = true;
             }
 
             ApiProxy.setApiPath(self.settings.apiPath);

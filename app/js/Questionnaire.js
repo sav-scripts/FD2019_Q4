@@ -33,6 +33,15 @@
 
 
 
+            $doms.container.find(".btn-rule").on("click", function(event)
+            {
+                event.preventDefault();
+
+                PopupMangaer.open("#rule");
+            });
+
+
+
             var id = "questionnaire";
             ScrollListener.addListener(id, function()
             {

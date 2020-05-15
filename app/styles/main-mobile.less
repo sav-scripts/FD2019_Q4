@@ -343,7 +343,8 @@
 
         .contents{
 
-            .abs-div-2(deco-1, -288, -663, 527, 269, "index-deco-1.m.png");
+//            .abs-div-2(deco-1, -288, -663, 527, 269, "index-deco-1.m.png");
+            .abs-div-2(deco-1, -288, -663, 527, 269);
             .abs-div-2(deco-2, -357, -258, 387, 394, "index-deco-2.m.png");
             .abs-div-2(deco-3, -860, -150, 1042, 354, "index-deco-3.png");
             .abs-div-2(deco-4, -293, -366, 541, 60, "index-deco-4.m.png");
@@ -1098,12 +1099,13 @@
     #coupon {
 
 //        min-height: 1650px;
-        min-height: 1950px;
+//        min-height: 1950px;
+        min-height: 2450px;
 
 
         .content{
 
-            margin-top: -200px;
+            margin-top: -450px;
 
             .light-1{
                 display: none;
@@ -1155,6 +1157,69 @@
                 }
             }
 
+
+            .note{
+                .abs-div(-330, 1140, 660, 430, "coupon-note.m.png");
+            }
         }
+    }
+
+
+    #rule{
+
+        position: relative;
+        width: 100%;
+        height: 100%;
+        //    min-height: 1080px;
+
+        @content-width: 659px;
+        @content-height: 11404px;
+        @top-height: 5000px;
+        @bleed: 130px;
+        @offset-y: 0px;
+
+        min-height: @content-height + (@bleed * 2);
+        //    background: linear-gradient(0deg, rgba(55,2,70,1) 28%, rgba(157,70,183,1) 78%);
+
+        //    opacity: .5;
+
+        .content{
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -@content-width * .5;
+            margin-top: -@content-height * .5 + @offset-y;
+            width: @content-width;
+            height: @content-height;
+
+            background: none;
+
+            .top{
+                position: absolute;
+                width: @content-width;
+                height: @top-height;
+                .image-bg("rule-content.top.m.png");
+
+            }
+
+            .bottom{
+                position: absolute;
+                top: @top-height;
+                width: @content-width;
+                height: @content-height - @top-height;
+                .image-bg("rule-content.bottom.m.png");
+
+            }
+
+            .abs-div-2(s-1, 494, 6397, 84, 40);
+            .abs-div-2(s-2, 40, 6443, 324, 40);
+
+            .abs-div-2(b-1, 254, 8924, 248, 40);
+            .abs-div-2(b-2, 240, 8971, 329, 40);
+            .abs-div-2(b-3, -10, 9018, 547, 40);
+
+        }
+
     }
 }
